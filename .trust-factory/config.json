@@ -1,0 +1,34 @@
+{
+  "branch": {
+    "base": "main",
+    "prefix": "agent/"
+  },
+  "checks": {
+    "verify": [
+      "python3 -m unittest discover -s tests -v"
+    ],
+    "fail_first": {
+      "test_globs": [
+        "tests/**"
+      ]
+    }
+  },
+  "limits": {
+    "concurrent_issues": 2,
+    "attempts_per_issue": 3
+  },
+  "merge": {
+    "mode": "propose",
+    "auto_when": {
+      "max_diff_lines": 150
+    },
+    "protected_paths": [
+      ".github/**",
+      ".claude/**",
+      ".trust-factory/**",
+      "**/auth/**",
+      "**/payments/**",
+      "**/migrations/**"
+    ]
+  }
+}
