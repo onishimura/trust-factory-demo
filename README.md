@@ -11,3 +11,4 @@ Run the tests: `python3 -m unittest discover -s tests -v`
 - `format_price(cents)`: 1250 → "$12.50".
 - `parse_duration(text)`: "1h30m" → 5400 (seconds). The units are h, m and s.
 - `format_duration(seconds)`: 5400 → "1h 30m". Zero is "0s".
+
