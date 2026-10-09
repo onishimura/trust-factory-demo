@@ -21,3 +21,12 @@ class FormatDurationTest(unittest.TestCase):
 
     def test_seconds(self):
         self.assertEqual(format_duration(59), "59s")
+
+    def test_days_and_hours(self):
+        self.assertEqual(format_duration(90000), "1d 1h")
+
+    def test_exact_day(self):
+        self.assertEqual(format_duration(86400), "1d")
+
+    def test_zero(self):
+        self.assertEqual(format_duration(0), "0s")

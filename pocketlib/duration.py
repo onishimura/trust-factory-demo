@@ -13,11 +13,11 @@ def parse_duration(text):
 
 
 def format_duration(seconds):
-    """Format 5400 as "1h 30m". Zero is "0s"."""
+    """Format 5400 as "1h 30m" and 90000 as "1d 1h". Zero is "0s"."""
     if seconds == 0:
         return "0s"
     parts = []
-    for unit, size in (("h", 3600), ("m", 60), ("s", 1)):
+    for unit, size in (("d", 86400), ("h", 3600), ("m", 60), ("s", 1)):
         if seconds >= size:
             parts.append("%d%s" % (seconds // size, unit))
             seconds %= size
